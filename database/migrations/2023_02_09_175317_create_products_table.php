@@ -18,7 +18,7 @@ return new class extends Migration
             //  primary
             $table->id();
             //  foreign
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             //Product attributes
             $table->string('name');
