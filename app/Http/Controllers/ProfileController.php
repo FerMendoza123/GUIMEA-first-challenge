@@ -58,6 +58,11 @@ class ProfileController extends Controller
         return Redirect::to('/');
     }
 
+    public function usersManagement()
+    {
+        return view("users");
+    }
+
     public function main()
     {
         return view("main");

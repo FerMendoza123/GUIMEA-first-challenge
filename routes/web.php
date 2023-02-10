@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,23 +16,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route("panel.main"));
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
+
+//Custom Aplication routes
+Route::middleware("auth")->group(function(){
+    //  Main page route (will )
+    Route::get("/panel",[ProfileController::class,'main'])->name('panel.main');
+    Route::get("/panel/users",[ProfileController::class,'usersManagement'])->name("panel.users");
+    Route::get("/panel/products",[CategoriesController::class,'productsManagement'])->name("panel.products");
 });
-
-// Aplication routes
-
-//  Main page route (will )
-Route::get("/panel",[ProfileController::class,'main'])->middleware(["auth","verified"])->name('panel.main');
 
 
 
