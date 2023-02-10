@@ -28,4 +28,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Aplication routes
+
+//  Main page route (will )
+Route::get("/panel",[ProfileController::class,'main'])->middleware(["auth","verified"])->name('panel.main');
+
+
+
 require __DIR__.'/auth.php';
