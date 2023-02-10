@@ -1,0 +1,18 @@
+Generar un proyecto de Laravel debe de utilizar alguna de las plantillas que usamos (pedir a compañeros o christian) el cual tenga:
+- Inicio de Sesión
+	- Administracion de Usuarios
+    - Administracion de Categorias
+        - Alta, baja, modificacion y eliminacion
+		- Administracion de Productos (Por categoria)
+			- Alta, baja, modificacion y eliminacion
+			
+Fuera del inicio de sesión que pueda ver las categorias con imagen, darle click, me arroje el listado de productos y al darle click al producto me arroje el detalle del producto
+
+Generar un proyecto de Ionic, en que por medio de una API puedas obtener la información del proyecto de Laravel, debes de poder visualizar categorias, los productos por categoria y poder dar de alta un producto, modificarlo y eliminarlo
+
+
+
+
+Tareas:
+
+-
